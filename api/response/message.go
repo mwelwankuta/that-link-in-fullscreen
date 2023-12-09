@@ -1,4 +1,4 @@
-package responsehandlers
+package response
 
 import (
 	"encoding/json"

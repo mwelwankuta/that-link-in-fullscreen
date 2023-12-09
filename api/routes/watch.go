@@ -5,7 +5,7 @@ import (
 	"io"
 	"net/http"
 
-	response "github.com/mwelwankuta/that-link-in-fullscreen/api/response-handlers"
+	response "github.com/mwelwankuta/that-link-in-fullscreen/api/response"
 	"github.com/mwelwankuta/that-link-in-fullscreen/utils"
 )
 

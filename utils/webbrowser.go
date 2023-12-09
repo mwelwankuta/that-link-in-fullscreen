@@ -3,6 +3,7 @@ package utils
 import (
 	"context"
 	"log"
+	"time"
 
 	"github.com/chromedp/chromedp"
 )
@@ -10,6 +11,7 @@ import (
 func PlayVideo(link string) error {
 	opts := append(chromedp.DefaultExecAllocatorOptions[:],
 		chromedp.Flag("headless", false),
+		chromedp.Flag("mute-audio", false),
 	)
 	ctx, _ := chromedp.NewExecAllocator(context.Background(), opts...)
 	// create context
@@ -23,6 +25,7 @@ func PlayVideo(link string) error {
 	var example string
 	err := chromedp.Run(ctx,
 		chromedp.Navigate(link),
+		chromedp.Sleep(10*time.Second), // Add a delay here
 		chromedp.WaitVisible(`.ytp-fullscreen-button`),
 		chromedp.Click(`.ytp-fullscreen-button`),
 	)
