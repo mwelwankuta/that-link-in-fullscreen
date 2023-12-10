@@ -1,0 +1,15 @@
+package main
+
+import "fmt"
+
+templ player(link string) {
+	<iframe
+ 		id="player"
+ 		type="text/html"
+ 		width="100%"
+ 		height="100%"
+ 		src={ fmt.Sprintf("https://www.youtube.com/embed/%s?autoplay=1", link) }
+ 		frameborder="0"
+ 		allowfullscreen?={ true }
+	></iframe>
+}
